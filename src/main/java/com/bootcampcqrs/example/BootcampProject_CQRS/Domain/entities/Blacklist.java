@@ -10,7 +10,6 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,4 +30,20 @@ public class Blacklist {
     @JoinColumn(name = "applicantId")
     @ManyToOne
     private Applicant applicant ;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public Applicant getApplicant() {
+        return applicant;
+    }
 }
