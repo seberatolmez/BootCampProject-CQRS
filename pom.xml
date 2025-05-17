@@ -56,6 +56,11 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>net.sizovs</groupId>
+			<artifactId>pipelinr</artifactId>
+			<version>0.8</version>
+		</dependency>
+		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
 			<version>${org.mapstruct.version}</version>

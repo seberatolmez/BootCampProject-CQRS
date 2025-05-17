@@ -10,7 +10,6 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -37,4 +36,23 @@ public class Bootcamp {
     @Column(name = "endDate")
     private LocalDateTime endDate;
 
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Instructor getInstructor() {
+        return instructor;
+    }
+
+    public LocalDateTime getStartDate() {
+        return startDate;
+    }
+
+    public LocalDateTime getEndDate() {
+        return endDate;
+    }
 }
