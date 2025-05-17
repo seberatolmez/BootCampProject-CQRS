@@ -2,11 +2,13 @@ package com.bootcampcqrs.example.BootcampProject_CQRS.Appliation.services.Bootca
 
 import com.bootcampcqrs.example.BootcampProject_CQRS.Domain.entities.Bootcamp;
 import com.bootcampcqrs.example.BootcampProject_CQRS.Persistance.repositories.BootcampRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class BootcampServiceImpl implements BootcampService {
 
      private BootcampRepository repository;
