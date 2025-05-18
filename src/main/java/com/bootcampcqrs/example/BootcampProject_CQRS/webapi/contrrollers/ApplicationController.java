@@ -9,6 +9,7 @@ import com.bootcampcqrs.example.BootcampProject_CQRS.Appliation.features.command
 import com.bootcampcqrs.example.BootcampProject_CQRS.Appliation.features.commands.application.update.UpdatedApplicationResponse;
 import com.bootcampcqrs.example.BootcampProject_CQRS.Appliation.features.queries.application.GetListApplicationQuery;
 import com.bootcampcqrs.example.BootcampProject_CQRS.Appliation.features.queries.application.GetListApplicationResponse;
+import jakarta.validation.Valid;
 import org.apache.catalina.Pipeline;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,7 +30,7 @@ public class ApplicationController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<CreateApplicationResponse> addApplications(@RequestBody CreateApplicationCommand command){
+    public ResponseEntity<CreateApplicationResponse> addApplications(@RequestBody @Valid CreateApplicationCommand command){
 
         CreateApplicationResponse response = command.execute(pipeline);
         return ResponseEntity.ok(response);
@@ -37,7 +38,7 @@ public class ApplicationController {
 
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<UpdatedApplicationResponse> updateApplications(@RequestBody UpdatedApplicationCommand command){
+    public ResponseEntity<UpdatedApplicationResponse> updateApplications(@RequestBody @Valid UpdatedApplicationCommand command){
         UpdatedApplicationResponse response = command.execute(pipeline);
         return ResponseEntity.ok(response);
     }

@@ -2,6 +2,8 @@ package com.bootcampcqrs.example.BootcampProject_CQRS.Domain.entities;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +25,8 @@ public class Bootcamp {
 
 
     @Column(name = "name")
+    @NotBlank(message = "Name field can not be empty")
+    @Size(min = 2,max = 50,message = "Name must be between 2 and 50 characters")
     private String name;
 
     @JoinColumn(name = "instructorId")
