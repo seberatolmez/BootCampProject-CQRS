@@ -19,7 +19,7 @@ public interface ApplicationMapper {
 
     ApplicationMapper INSTANCE = Mappers.getMapper(ApplicationMapper.class);
 
-    Application applicationFromCreateBrandCommand(CreateApplicationCommand command);
+    Application applicationFromCreateApplicationCommand(CreateApplicationCommand command);
     CreateApplicationResponse createdApplicationResponseFromApplication(Application application);
     UpdatedApplicationResponse updatedApplicationResponseFromApplication(Application application);
     DeletedApplicationResponse deletedApplicationResponseFromApplication(Application application);
